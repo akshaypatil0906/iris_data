@@ -1,57 +1,74 @@
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>Flower Prediction</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <style>
-    .button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
-}
-
+        label {
+            color: #5fd9f8;
+            font-weight: bold;
+            display: block;
+            width: 150px;
+            float: left;
+        }
+        
+        label:after {
+            content: " "
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 18px 58px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 52px;
+            cursor: pointer;
+        }
+        
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+        
         input[type=text] {
-          width: 100%;
-          padding: 12px 20px;
-          margin: 8px 0;
-          box-sizing: border-box;
-          border: none;
-          background-color: #aafddf;
-          color: white;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: #aafddf;
+            color: white;
         }
     </style>
 
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>Iris Prediction</h1>
     <form action="{{ url_for('predict')}}" method="post">
-        <label for="fname">ID</label>
-        <input type="text" id="fname" name="fname" value="Enter value">
-        <label for="lname">SepalLengthCm</label>
-        <input type="text" id="lname" name="lname" value="Enter Value">
-        <label for="lname">SepalWidthCm</label>
-        <input type="text" id="lname" name="lname" value="Enter Value">
-        <label for="lname">PetalLengthCm</label>
-        <input type="text" id="lname" name="lname" value="Enter Value">
-        <label for="lname">PetalWidthCm</label>
-        <input type="text" id="lname" name="lname" value="Enter Value">
-        <button type="submit" class="button button1">Predict</button>
-        
+        <label for="ID">ID</label>
+        <input type="text" id="ID" name="ID" value="">
+        <label for="SepalLengthCm">SepalLengthCm</label>
+        <input type="text" id="SepalLengthCm" name="SepalLengthCm" value="">
+        <label for="SepalWidthCm">SepalWidthCm</label>
+        <input type="text" id="SepalWidthCm" name="SepalWidthCm" value="">
+        <label for="PetalLengthCm">PetalLengthCm</label>
+        <input type="text" id="PetalLengthCm" name="PetalLengthCm" value="">
+        <label for="PetalWidthCm">PetalWidthCm</label>
+        <input type="text" id="PetalWidthCm" name="PetalWidthCm" value="">
+        <button type="submit" class="button button1">Predict</button> <label style="
+        float: inherit ;color:blue;font-size:24px;width: 350px">{{ prediction_text }}</label>
 
-        {{ prediction_text }}
-      </form>
-  </body>
+
+    </form>
+</body>
+
 </html>
